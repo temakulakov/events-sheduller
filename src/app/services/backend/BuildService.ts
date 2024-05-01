@@ -14,7 +14,7 @@ export class BuildService {
 	static async create(title: string) {
 		return;
 	}
-	static async update(id: number) {
+	static async update(id: number, title: string) {
 		return;
 	}
 	static async delete(id: number) {

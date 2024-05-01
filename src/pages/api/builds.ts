@@ -1,5 +1,5 @@
 // pages/api/builds.ts
-import { BuildService } from '@/services/BuildService';
+import { BuildService } from '@/services/backend/BuildService';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(

@@ -1,26 +1,16 @@
-// import 'antd/dist/antd.css'; // Импорт стилей antd
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import StyledComponentsRegistry from '../lib/AntdRegistry';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+// const queryClient = new QueryClient();
 
-export const metadata: Metadata = {
-	title: 'Календарь мероприятий',
-	description: '',
-};
-
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
-	return (
-		<html lang='en'>
-			<body className={inter.className}>
-				<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-			</body>
+const RootLayout = ({ children }: React.PropsWithChildren) => (
+	<AntdRegistry>
+		<html lang='ru'>
+			<body>{children}</body>
 		</html>
-	);
-}
+	</AntdRegistry>
+);
+
+export default RootLayout;

@@ -1,4 +1,4 @@
-import { BuildService } from '@/services/BuildService';
+import { BuildService } from '@/services/backend/BuildService';
 import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 

@@ -1,14 +1,14 @@
-import { Button } from 'antd';
-import Link from 'next/link';
+'use client';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useState } from 'react';
+import Content from './components/Content';
 
 export default function Home() {
+	const [queryClient] = useState(() => new QueryClient());
+
 	return (
-		<main>
-			<Link href='/admin'>
-				<Button type='dashed' size={'large'}>
-					Админка
-				</Button>
-			</Link>
-		</main>
+		<QueryClientProvider client={queryClient}>
+			<Content />
+		</QueryClientProvider>
 	);
 }
